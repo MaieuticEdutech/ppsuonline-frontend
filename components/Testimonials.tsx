@@ -216,7 +216,7 @@ export default function Testimonials() {
               onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(241,90,41,0.25)"; (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(241,90,41,0.15)"; (e.currentTarget as HTMLAnchorElement).style.transform = "none"; }}
             >
-              Know More About PPSU Online
+           Get to know
             </a>
             <button
               onClick={() => openModal()}

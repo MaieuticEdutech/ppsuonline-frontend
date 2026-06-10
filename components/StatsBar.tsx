@@ -64,7 +64,7 @@ export default function StatsBar() {
             background: "rgba(224,48,48,0.08)", color: "#e03030",
             fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase",
             padding: "5px 16px", borderRadius: 50, marginBottom: 16,
-          }}>Our Numbers</span>
+          }}></span>
           <h2 style={{
             fontSize: "clamp(24px,2.8vw,36px)",
             fontWeight: 900, color: "#1a2e5a",

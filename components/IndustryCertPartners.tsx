@@ -37,7 +37,7 @@ export default function IndustryCertPartners() {
           background: "rgba(224,48,48,.08)", color: "#e03030",
           fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase",
           padding: "5px 14px", borderRadius: 50, marginBottom: 14,
-        }}>Certified Excellence</span>
+        }}></span>
         <h2 style={{
           fontWeight: 800, letterSpacing: 2, textTransform: "uppercase",
           fontSize: "clamp(18px,2.2vw,28px)", color: "#1a2e5a",
@@ -47,7 +47,6 @@ export default function IndustryCertPartners() {
         </h2>
         <div style={{ width: 64, height: 4, background: "#e03030", borderRadius: 9999, margin: "12px auto 0" }} />
         <p style={{ fontSize: 14, color: "#6b7280", marginTop: 10 }}>
-          Students earn globally recognised certifications alongside their degrees
         </p>
       </div>
 
