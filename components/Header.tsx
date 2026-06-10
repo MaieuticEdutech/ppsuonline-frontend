@@ -10,7 +10,6 @@ const NAV_LINKS = [
   { label: "Courses",       href: "#courses"      },
   { label: "Scholarships",  href: "#scholarships" },
   { label: "International", href: "#intl"         },
-  { label: "Life At PPSU",  href: "#gallery"      },
   { label: "Testimonials",  href: "#testimonials" },
 ];
 
