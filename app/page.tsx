@@ -8,6 +8,7 @@ import Courses              from "@/components/Courses";
 import IndustryCertPartners from "@/components/IndustryCertPartners";
 import Scholarships         from "@/components/Scholarships";
 import InternationalCollab  from "@/components/InternationalCollab";
+import CampusGallery from "@/components/CampusGallery";
 import Testimonials         from "@/components/Testimonials";
 import Footer               from "@/components/Footer";
 import StickyPhone          from "@/components/StickyPhone";
@@ -26,6 +27,7 @@ export default function Home() {
         <IndustryCertPartners />
         <Scholarships />
         <InternationalCollab />
+        <CampusGallery />
         <Testimonials />
       </main>
       <Footer />
