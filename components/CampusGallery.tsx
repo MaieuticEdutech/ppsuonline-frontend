@@ -57,7 +57,7 @@ export default function CampusGallery() {
               Campus Experience
             </span>
             <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
-              <h2 style={{ fontSize: "clamp(40px,5.5vw,76px)", fontWeight: 900, lineHeight: 0.95, margin: 0, color: "#1a2e5a", fontStyle: "italic", fontWeight: 300 }}>
+              <h2 style={{ fontSize: "clamp(40px,5.5vw,76px)", fontWeight: 300, lineHeight: 0.95, margin: 0, color: "#1a2e5a", fontStyle: "italic" }}>
                 Life At{" "}
               </h2>
               <span style={{ fontSize: "clamp(40px,5.5vw,76px)", fontWeight: 900, lineHeight: 0.95, color: "#e03030" }}>
