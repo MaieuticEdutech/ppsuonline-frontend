@@ -54,7 +54,6 @@ export default function CampusGallery() {
               fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase",
               padding: "5px 14px", borderRadius: 50, marginBottom: 14,
             }}>
-              Campus Experience
             </span>
             <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
             <h2 style={{ fontSize: "clamp(40px,5.5vw,76px)", fontWeight: 300, lineHeight: 0.95, margin: 0, color: "#1a2e5a", fontStyle: "italic" }}>
@@ -68,7 +67,7 @@ export default function CampusGallery() {
 
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 14 }}>
             <p style={{ fontSize: 14, color: "#6b7280", maxWidth: 320, lineHeight: 1.7, textAlign: "right", margin: 0 }}>
-              Vibrant campus life — from cultural fests and sports to labs, events and unforgettable memories.
+              
             </p>
             {/* filter pills */}
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "flex-end" }}>
