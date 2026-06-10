@@ -29,7 +29,7 @@ export default function InternationalCollab() {
           background: "rgba(224,48,48,.08)", color: "#e03030",
           fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase",
           padding: "5px 14px", borderRadius: 50, marginBottom: 14,
-        }}></span>
+        }}>150+ Global Partnerships</span>
         <h2 style={{
           fontWeight: 800, letterSpacing: 2, textTransform: "uppercase",
           fontSize: "clamp(18px,2.2vw,28px)", color: "#1a2e5a",
@@ -110,7 +110,21 @@ export default function InternationalCollab() {
         display: "flex", justifyContent: "center", gap: 64,
         marginTop: 48, flexWrap: "wrap",
       }}>
-        
+        {[
+          { num: "150+", label: "Partner Universities" },
+          { num: "30+",  label: "Countries"            },
+          { num: "1K+",  label: "International Students" },
+          { num: "5+",   label: "Continents"           },
+        ].map((s, i) => (
+          <div key={i} style={{ textAlign: "center" }}>
+            <div style={{ fontSize: "clamp(28px,3vw,40px)", fontWeight: 900, color: "#F15A29", lineHeight: 1 }}>
+              {s.num}
+            </div>
+            <div style={{ fontSize: 13, color: "#6b7280", marginTop: 4, fontWeight: 500 }}>
+              {s.label}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

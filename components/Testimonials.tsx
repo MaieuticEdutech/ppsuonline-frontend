@@ -24,8 +24,8 @@ export default function Testimonials() {
   return (
     <>
     {/* ══ STUDENT TESTIMONIALS ══ */}
-    <section id="testimonials" style={{ background: "#fff", padding: "10px 0" }}>
-      <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 10px" }}>
+    <section id="testimonials" style={{ background: "#fff", padding: "80px 0" }}>
+      <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 40px" }}>
 
         {/* heading */}
         <div style={{ textAlign: "center", marginBottom: 48 }}>
@@ -34,7 +34,7 @@ export default function Testimonials() {
             background: "rgba(224,48,48,.08)", color: "#e03030",
             fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase",
             padding: "5px 14px", borderRadius: 50, marginBottom: 14,
-          }}></span>
+          }}>Student Stories</span>
           <h2 style={{
             fontWeight: 800, letterSpacing: 2, textTransform: "uppercase",
             fontSize: "clamp(18px,2.2vw,28px)", color: "#1a2e5a",
@@ -87,7 +87,7 @@ export default function Testimonials() {
                   background: i === active
                     ? "linear-gradient(135deg,#1a2e5a,#2a4a8a)"
                     : "#f8fafc",
-                  Border: i === active ? "none" : "1.5px solid #e5e7eb",
+                  border: i === active ? "none" : "1.5px solid #e5e7eb",
                   transition: "all .2s",
                   boxShadow: i === active ? "0 8px 24px rgba(26,46,90,.2)" : "none",
                 } as React.CSSProperties}

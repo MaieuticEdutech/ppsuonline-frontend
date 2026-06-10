@@ -35,7 +35,7 @@ export default function Scholarships() {
   return (
     <section id="scholarships" style={{
       background: "linear-gradient(160deg, #f0f4ff 0%, #fdf1ee 100%)",
-      padding: "40px 0", overflow: "hidden", position: "relative",
+      padding: "90px 0", overflow: "hidden", position: "relative",
     }}>
       {/* Decorative circles */}
       <div style={{ position: "absolute", top: -120, left: -120, width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(241,90,41,0.07) 0%, transparent 65%)", pointerEvents: "none" }} />
@@ -50,7 +50,7 @@ export default function Scholarships() {
             background: "rgba(224,48,48,0.08)", color: "#e03030",
             fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase",
             padding: "5px 16px", borderRadius: 50, marginBottom: 18,
-          }}></span>
+          }}>Financial Support</span>
           <h2 style={{
             fontSize: "clamp(24px,3vw,44px)", fontWeight: 900,
             color: "#1a2e5a", letterSpacing: 2, textTransform: "uppercase", margin: 0,

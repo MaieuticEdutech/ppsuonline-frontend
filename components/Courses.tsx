@@ -131,9 +131,7 @@ const CDOE_PG = [
 ];
 
 export default function Courses() {
-  const [active,  setActive]  = useState(0);
-  const [mainTab, setMainTab] = useState<"regular" | "cdoe">("regular");
-  const school = SCHOOLS[active];
+  const [tab, setTab] = useState<"gov" | "ppsu">("gov");
   const { open: openModal } = useApplyModal();
 
   return (
@@ -146,110 +144,15 @@ export default function Courses() {
             display: "inline-block", background: "rgba(224,48,48,.1)", color: "#e03030",
             fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: "uppercase",
             padding: "5px 14px", borderRadius: 50, marginBottom: 14,
-          }}></span>
+          }}>60+ Programmes</span>
           <h2 style={{ fontSize: "clamp(24px,3vw,40px)", fontWeight: 900, color: "#1a2e5a", lineHeight: 1.2 }}>
             COURSES <span style={{ color: "#F15A29" }}>OFFERED</span>
           </h2>
           <div style={{ width: 60, height: 4, background: "#e03030", borderRadius: 9999, margin: "12px auto 0" }} />
         </div>
 
-        {/* Tab switcher — Regular / CDOE */}
-        <div style={{ display: "flex", justifyContent: "center", gap: 0, marginBottom: 36, border: "1.5px solid #e0e5ed", borderRadius: 12, overflow: "hidden", maxWidth: 420, margin: "0 auto 36px" }}>
-          {([
-            { key: "regular", label: "Regular Programmes" },
-            { key: "cdoe",    label: "CDOE (OL Mode)"     },
-          ] as const).map(t => (
-            <button key={t.key} onClick={() => setMainTab(t.key)} style={{
-              flex: 1, padding: "12px 0", border: "none", cursor: "pointer",
-              fontFamily: "Poppins,sans-serif", fontWeight: 700, fontSize: 13,
-              background: mainTab === t.key ? "#1a2e5a" : "#fff",
-              color: mainTab === t.key ? "#fff" : "#6b7280",
-              transition: "all 0.2s",
-            }}>{t.label}</button>
-          ))}
-        </div>
-
-        {/* ── REGULAR PROGRAMMES ── */}
-        {mainTab === "regular" && (
-          <div style={{ display: "grid", gridTemplateColumns: "280px 1fr", gap: 24, alignItems: "start" }}>
-
-            {/* LEFT: school tabs */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 6, maxHeight: 580, overflowY: "auto", paddingRight: 4 }}>
-              {SCHOOLS.map((s, i) => (
-                <button key={i} onClick={() => setActive(i)} style={{
-                  display: "flex", alignItems: "center", gap: 12,
-                  padding: "12px 16px", borderRadius: 12,
-                  border: "none", cursor: "pointer", textAlign: "left",
-                  transition: "all .2s",
-                  background: i === active ? s.bg : "#fff",
-                  boxShadow: i === active ? `0 8px 24px ${s.color}44` : "0 1px 4px rgba(0,0,0,.06)",
-                  transform: i === active ? "translateX(6px)" : "none",
-                }}>
-                  <div style={{
-                    width: 40, height: 40, borderRadius: 10, flexShrink: 0,
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    fontWeight: 800, fontSize: 11, letterSpacing: 0.5,
-                    background: i === active ? "rgba(255,255,255,.2)" : "#f1f5f9",
-                    color: i === active ? "#fff" : s.color,
-                  }}>{s.abbr}</div>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{
-                      fontSize: 13, fontWeight: 600, lineHeight: 1.3,
-                      color: i === active ? "#fff" : "#1a2e5a",
-                      overflow: "hidden", textOverflow: "ellipsis",
-                      display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical",
-                    }}>{s.name}</div>
-                    <div style={{ fontSize: 11, marginTop: 2, color: i === active ? "rgba(255,255,255,.7)" : "#9ca3af" }}>
-                      {s.count} programme{s.count > 1 ? "s" : ""}
-                    </div>
-                  </div>
-                  {i === active && <div style={{ color: "rgba(255,255,255,.7)", fontSize: 16, flexShrink: 0 }}>&#8594;</div>}
-                </button>
-              ))}
-            </div>
-
-            {/* RIGHT: course panel */}
-            <div key={active} style={{ borderRadius: 20, overflow: "hidden", boxShadow: "0 4px 32px rgba(0,0,0,.08)", border: "1.5px solid #e5e7eb", animation: "fadeSlide .3s ease both" }}>
-              <div style={{ background: school.bg, padding: "28px 32px", display: "flex", alignItems: "center", gap: 20 }}>
-                <div style={{ width: 64, height: 64, borderRadius: 16, background: "rgba(255,255,255,.15)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, fontSize: 18, color: "#fff", flexShrink: 0 }}>{school.abbr}</div>
-                <div>
-                  <h3 style={{ fontSize: "clamp(18px,2vw,26px)", fontWeight: 800, color: "#fff", lineHeight: 1.2 }}>{school.name}</h3>
-                  <div style={{ display: "inline-flex", alignItems: "center", gap: 6, marginTop: 6, background: "rgba(255,255,255,.15)", borderRadius: 50, padding: "3px 12px" }}>
-                    <span style={{ color: "#fff", fontSize: 12, fontWeight: 600 }}>{school.count} Programme{school.count > 1 ? "s" : ""} Available</span>
-                  </div>
-                </div>
-              </div>
-              <div style={{ background: "#fff", padding: "28px 32px" }}>
-                <div style={{ display: "grid", gridTemplateColumns: school.courses.length === 1 ? "1fr" : "repeat(2, 1fr)", gap: "10px 24px" }}>
-                  {school.courses.map((c, ci) => (
-                    <div key={ci} style={{ display: "flex", alignItems: "flex-start", gap: 10, padding: "12px 14px", borderRadius: 10, background: "#f8fafc", border: "1px solid #f0f4f8", transition: "border-color .2s" }}
-                      onMouseEnter={e => (e.currentTarget.style.borderColor = school.color)}
-                      onMouseLeave={e => (e.currentTarget.style.borderColor = "#f0f4f8")}
-                    >
-                      <div style={{ width: 8, height: 8, borderRadius: "50%", flexShrink: 0, marginTop: 4, background: school.color }} />
-                      <span style={{ fontSize: 13, color: "#374151", fontWeight: 500, lineHeight: 1.5 }}>{c}</span>
-                    </div>
-                  ))}
-                </div>
-                <div style={{ marginTop: 24, display: "flex", justifyContent: "flex-end" }}>
-                  <button onClick={openModal} style={{
-                    background: school.bg, color: "#fff", border: "none", borderRadius: 10,
-                    padding: "12px 28px", fontFamily: "Poppins,sans-serif",
-                    fontWeight: 700, fontSize: 14, cursor: "pointer",
-                    boxShadow: `0 6px 20px ${school.color}44`,
-                    display: "flex", alignItems: "center", gap: 8,
-                  }}>
-                    Apply for {school.abbr} &#8594;
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
         {/* ── CDOE / OL MODE ── */}
-        {mainTab === "cdoe" && (
-          <div style={{ animation: "fadeSlide .3s ease both" }}>
+        <div style={{ animation: "fadeSlide .3s ease both" }}>
 
             {/* Info banner */}
             <div style={{
