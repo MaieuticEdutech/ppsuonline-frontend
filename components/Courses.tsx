@@ -236,7 +236,6 @@ export default function Courses() {
               }}>Apply Now &#8594;</button>
             </div>
           </div>
-        )}
 
       </div>
 
