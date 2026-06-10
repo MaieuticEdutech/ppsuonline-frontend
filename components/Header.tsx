@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { label: "Courses",       href: "#courses"      },
   { label: "Scholarships",  href: "#scholarships" },
   { label: "International", href: "#intl"         },
-  { label: "Campus",        href: "#campus"       },
+  { label: "Campus",        href: "#gallery"       },
   { label: "Testimonials",  href: "#testimonials" },
 ];
 

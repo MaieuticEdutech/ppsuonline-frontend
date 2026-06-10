@@ -35,7 +35,7 @@ export default function CampusGallery() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section id="gallery" style={{ background: "#fff", padding: "80px 0", overflow: "hidden" }}>
+    <section id="gallery" style={{ background: "#fff", padding: "10px 0", overflow: "hidden" }}>
       <div style={{ maxWidth: 1260, margin: "0 auto", padding: "0 40px" }}>
 
         {/* ── Header row ── */}
